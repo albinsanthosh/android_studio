@@ -40,5 +40,19 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT).show();
             }
         });
+
+        // Button onclick Toast
+        // find the button
+        View view = findViewById(R.id.button);
+
+        // Register the above view object to the event listener
+        view.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view1) {
+                // toast the msg that its clicked
+                Toast.makeText(getApplicationContext(),((Button)view1).getText(), Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
