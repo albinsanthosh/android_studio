@@ -1,0 +1,80 @@
+Res folder
+Drawable folder - we can place picture in this.
+Layout folder - xml file which defines the layout. Has design/test mode.
+mipmap folder - contains different quality images. Depending on screen density, the image is loaded. 
+dpi - dots per inch
+values folder - xml files with values of color etc which can be used.
+
+Gradle Scripts
+build.gradle(Module: app) - compileSdkVersion(highest version of compiler used)
+
+To change the launcher icon
+1. Go to top app folder
+2. Right click and new and Image asset
+3. select appropriate image
+4. Go to app folder and manifests
+5. Go to AndroidManifest.xml
+6. Under application, go to android:icon="@mipmap/changed_icon_name" and insert changed icon name.  
+
+EditText
+android:layout_width="match_parent"
+android:inputType="text"
+android:hint="user name"
+android:gravity="center"
+
+Toast
+It is a notification message tha pop up, display a certain amount of time, and automatically fades in and out, most people just use it for debugging purpose.
+
+View object
+	Button
+	CheckBox
+	TextView
+
+Class R
+	It has a static member => class id
+		class id has a static member => clickButton
+R.id.clickButton
+
+------
+Adding a custom layout
+
+View is the super class for Button
+
+right click layout folder 
+New -> new XML layout
+Give filename and layout relative or linear
+
+Add an ImageView
+android:src="@drawable/joseph"
+
+LayoutInflator obj => to instantiate xml file -> view objects 
+
+In custom.xml, in Relative Layout tag heading, add android:id="@+id/customId"  
+
+------
+Multiple activities in Android
+Intent is messaging object to start anything(service, activities)
+
+Go to java -> application multidemo right click
+New -> Activity -> Empty Actvity
+give name 
+
+Inside manifest folder AndroidManifest.xml
+All the activity will be available inside this file under activity tag
+Any activity name starts with .Activity Name  
+
+-----
+Using intent to pass data from one activity to another
+Put data1 & data2 into intent object before starting the second activity
+intent.putExtra("first", data1);
+intent.putExtra("second", data2);
+
+
+Retrieve the data from Intent object
+String s = intent.getStringExtra("first");
+String s1 = intent.getStringExtra("second");
+getDoubleExtra - if type is Double
+getStringExtra - if type is String
+
+Setting textView  
+textView.setText(s+":"+s1);

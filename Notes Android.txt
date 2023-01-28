@@ -1,0 +1,47 @@
+Address save and map feature app
+Video data shower app
+
+Android architecture or Android software stack is categorized into five parts:
+
+1 linux kernel
+2 native libraries (middleware),
+3 Android Runtime (Dalvik VM)
+4 Application Framework
+5 Applications
+
+The core building blocks or fundamental components of android are activities, views, intents, services, content providers, fragments and AndroidManifest.xml.
+
+SDK
+Android studio ide
+stup AVD
+
+Tutorial
+https://www.javatpoint.com/how-to-setup-android-for-eclipse-ide
+
+
+APK output
+C:\Users\Albin\AndroidStudioProjects\Welcome\app\build\outputs\apk\debug
+
+Important files
+1 MainActivity.java
+( Activity is a java class that creates and default window on the screen. The onCreate method is called when Activity class is first created. The setContentView(R.layout.activity_main) gives information about our layout resource. )
+
+2 activity_main.xml
+( layout resources are defined )
+
+3 strings.xml
+( value of the attribute hello_world is defined )
+
+4 R.java
+( auto-generated file that contains IDs for all the resources of res directory )
+
+5 Manifest file
+( contains information about package including components such as activities, services, content providers etc. )
+
+
+The Dex compiler converts the class files into the .dex file that run on the Dalvik VM. Multiple class files are converted into one dex file.
+
+.class -> Dex compiler -> .dex -> Packaging by Android Assets Packaging Tool (aapt) -> .apk
+
+latest
+https://www.javatpoint.com/android-hide-title-bar-example
