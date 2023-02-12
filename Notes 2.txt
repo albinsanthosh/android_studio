@@ -78,3 +78,44 @@ getStringExtra - if type is String
 
 Setting textView  
 textView.setText(s+":"+s1);
+-----
+Create Listview in Android
+Adapter
+Array Adapter (String)
+Base Adapter (Customized)
+Cursor Adapter (database)
+
+Inside containers -> Listview
+
+ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+          this, // context
+          android.R.layout.simple_list_item_1,    // data is inserted into textview
+          fruits  // input resource
+);
+
+set adapter to listView
+listView.setAdapter(arrayAdapter);
+
+create myview
+new xml layout -> myview, root tag as TextView
+
+add as custom view layout
+R.layout.myview
+
+Goto Project view
+External libraries
+Android
+res
+layout
+simple_list_item_1
+copy the last line of min height for getting the same height
+goto myview and paste as last line
+
+Add android:gravity="center_vertical" to center vertical the text
+
+-----
+ListView using ArrayAdapter with Event Handling
+1. Register with setOnItemClickListener
+2. Override onItemClick
+3. Convert the view object to get content
+4. Toast with/without position
