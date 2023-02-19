@@ -119,3 +119,21 @@ ListView using ArrayAdapter with Event Handling
 2. Override onItemClick
 3. Convert the view object to get content
 4. Toast with/without position
+
+-----
+SQLiteAddDisplay
+DataBaseHandler extends SQLiteOpenHelper contains 2 abstract method 
+onCreate(code to create the table when running the app, only exectutes if table not available), 
+onUpgrade(code to upgrade db by add column/ version, generally drop table and recreate the table)
+
+db.insert("Employee", null, values);
+Table, nullColumnHack, ContentValues object
+if nullColumnHack=null, no empty row will be inserted
+
+for documentation
+/***and press enter
+
+rawQuery() - to execute the sql query
+we can use sql here
+
+Cursor will be pointing above the first row
