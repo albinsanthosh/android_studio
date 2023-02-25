@@ -137,3 +137,35 @@ rawQuery() - to execute the sql query
 we can use sql here
 
 Cursor will be pointing above the first row
+-----
+SERVICE
+Used to perform long operations in background
+Does not have UI
+
+2 forms
+1. started - called by startService()
+Once started a service can run indefinitely, even if the component that started it is destroyed.
+
+2. Bound
+A service is bound when an application component binds to it by calling bindService().
+
+Life cycle methods
+onCreate()
+onStartCommand()
+onBind()
+onDestroy()
+
+For createing the Service 
+Service - short running service
+Service(intentService) - long running service
+
+Create an intent for starting the service
+startService(intent);
+
+similarly
+stopService(intent)
+
+To monitor log here
+select "info" and tagname "mylog" 
+
+Once job is done we can call stopSelf();
