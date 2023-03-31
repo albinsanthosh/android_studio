@@ -156,8 +156,8 @@ onBind()
 onDestroy()
 
 For createing the Service 
-Service - short running service
-Service(intentService) - long running service
+Service - short running service (Main activity and service in same thread)
+Service(intentService) - long running service (Thread handler used)
 
 Create an intent for starting the service
 startService(intent);
@@ -169,3 +169,58 @@ To monitor log here
 select "info" and tagname "mylog" 
 
 Once job is done we can call stopSelf();
+-----
+Resource crunch
+when so many apps are running. Low memory
+
+the android will close the service app only if critical even after closing other apps.
+
+Once it is killed will it be restarted.
+
+return super.onStartCommand(intent, flags, startId)
+START_STICKY (default): START_FLAG_RETRY is the flag in onStartCommand()
+create a fresh copy of service when sufficient memory available
+
+START_NOT_STICKY : START_FLAG_RETRY is the flag in onStartCommand()
+not to bother to restart the service, even when it has sufficient memory
+
+START_REDELIVER_INTENT : START_FLAG_REDELIVERY is the flag in onStartCommand()
+to restart the service after the crash and also redeliver the intents that were present at the time of crash.
+
+-----
+Google introduced the Tool Bar for Android with Android 5.0 Lollipop
+It's a generalisation of the Action Bar that isn't bound to an Activity's window decor, can be placed anywhere in the user interface, and can even be designated as the Action Bar replacement for an Activity.
+
+in res \ values\ styles
+in 
+parent = "Theme.AppCompact.Light.DarkActionBar"
+change to
+parent = "Theme.AppCompact.NoActionBar"
+
+Remove padding values to remove spaces
+
+if error core-ui
+Add implementation 'androidx.legacy:legacy-support-core-ui:1.0.0-alpha1' in build.gradle dependency
+
+Keep Toolbar only after setContentView
+In Drawable folder, create new Image Assets
+
+----
+Switch On Off Bluetooth
+Bluetooth Adapter helps to communicate with Bluetooth
+we check if it is enabled or not.
+Then we enable it with intent object.
+
+Use startActivityForResult() if we want to oerride its relevent callback method
+
+Here we are using the Bluetooth in On button we need to set some permission in AndroidManifest.xml
+<uses-permission android:name="android.permission.BLUETOOTH"/>
+
+To swith off bluetooth we need some admin permission, necessary to disable it.
+<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
+note: check the output in a physical device not in emulator.
+-----
+List Out Paired Devices/ Bonded devices
+
+Set<BluetoothDevice> set = bluetoothAdapter.getBondedDevices()
