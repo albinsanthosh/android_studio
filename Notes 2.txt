@@ -224,3 +224,65 @@ note: check the output in a physical device not in emulator.
 List Out Paired Devices/ Bonded devices
 
 Set<BluetoothDevice> set = bluetoothAdapter.getBondedDevices()
+-----
+NOTE - WIFI CODE SEEMS TO BE HAVING SOME ISSUE
+
+WiFi Switch ON OFF
+
+Switch element
+<Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/myswitch"
+        android:text="WiFi Settings"
+        android:textOn="ON"
+        android:textOff="OFF"
+        android:showText="true"
+        />
+showText used to show the textOn, textOff.
+
+Switch uses setOnCheckedChangeListener
+WifiManager is important here
+
+isChecked is true when button becomes OFF to ON position
+
+First it checks if isChecked is true and WiFi is not ON, then it turns WiFi ON
+Else it checks if isChecked is false and WiFi is ON, then it turns WiFi OFF
+
+To use WiFi we need to give some permission in AndroidManifest.xml file outside application tag
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+-----
+Android - Scan WiFi Connections
+Whenever there is a change BroadCastReceiver is called and onReceive is invoked 	
+-----
+Create Fragments in Android
+
+MainActivity
+	1. ListFrag.java + xml - ListView
+	2. TextFrag.java + xml - TextView
+
+LinearLayout - one layout adjacent to another layout
+
+create ListFrag.java
+	1. create a class which extends Fragment
+	2. Override onCreateView
+
+	
+we can inflate xml file
+
+inflater.inflate(which xml, which parent, whether attached to parent or not)
+
+getActivity() - Returns the Activity this fragment is currently associated with.
+
+Three properties in textView in text_frag.xml
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:gravity="center"
+
+Finding the fragment can be done with FragmentManager
+To manage all the fragment in a particular activity
+
+To add fragments => Java / xml
+
+using xml go to activity_main.xml and add fragments using <fragment>
