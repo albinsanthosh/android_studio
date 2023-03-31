@@ -286,3 +286,29 @@ To manage all the fragment in a particular activity
 To add fragments => Java / xml
 
 using xml go to activity_main.xml and add fragments using <fragment>
+-----
+Multi tabs in Android
+
+TabLayout provided by Google material design
+
+in style.xml change to Theme.AppCompat.NoActionBar
+
+Add a toolbar
+Replaced below in build.gradle as core-ui line was not working
+implementation 'androidx.legacy:legacy-support-core-ui:1.0.0-alpha1'
+
+Teachers dependency
+com.android.support:appcompat-v7:24.2.1
+com.android.support:design:24.2.1
+
+ViewPager for sliding options
+in xml we have
+Toolbar, TabLayout, ViewPager
+
+3 tabs - for each tab we are going to create one fragment
+
+create a class which return relevent fragment for every slide
+FragmentStatePagerAdapter - When move from one tab to another, old fragment is removed from memory. 
+
+getItem invoked by the app, whenever we move from one tab to another
+   
