@@ -311,4 +311,62 @@ create a class which return relevent fragment for every slide
 FragmentStatePagerAdapter - When move from one tab to another, old fragment is removed from memory. 
 
 getItem invoked by the app, whenever we move from one tab to another
-   
+-----
+Android app to Track your location using Google Map API
+
+google maps activity project
+
+It open google_maps_api.xml file, where we can give api key
+In my case it is in AndroidManifest.xml
+
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+As app started it calls the onCreate method, then getMapAsync(this) it calls onMapReady method
+
+moveCamera moves the screen to that location
+
+onMapReady method is needed to be override it is in the interface OnMapReadyCallback.
+
+LatLng sydney = newLatLng(-34, 151)
+// for zooming
+mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 10.2f))
+
+For our own location
+LocationManager which manages the location
+
+provider - network/gps
+minTime - minimum time to update 
+minDistance - minimum distance to update
+LocationListener
+
+latitude and longitude is very important to get address using the concept called geocoder.
+
+onLocationChanged gets triggered whenever there is a location change.
+
+geocoder.getFromLocation(latitude, longitude, 1) returns a list with 1 address
+
+From address got we can use getLocality(), getCountryName() to get locailty and country name
+-----
+Application Specific Folders to Store Files
+
+Using Application-Specific Folders to Store Files
+
+Creating Private Application Files
+
+Private Application Files stored in data/data/com.example.bright.myapplication/files
+
+To store, Android offers the
+	1. openFileInput and
+	2. openFileOutput methods to simplify reading and writing streams from and to files stored in the application's sandbox.
+
+To keep some file in Private Application Files we can use openFileOutput
+To read such files we can use openFileInput 
+
+openFileOutput returns an object of type FileOutputStream.
+
+MODE_APPEND - keeps the old data
+MODE_PRIVATE - removes the old data
+
+getFilesDir() - returns File object, we can use it to get the location of the myFile.txt
+/data/data/com.example.applicationspecificfoldersstorefiles/files 
+
